@@ -1,6 +1,24 @@
 @http_query_rfc_HostAddress = http://localhost:5281
 
-GET {{http_query_rfc_HostAddress}}/weatherforecast/
+GET {{http_query_rfc_HostAddress}}/api/v1/users?minAge=30&maxAge=50
 Accept: application/json
 
 ###
+
+POST {{http_query_rfc_HostAddress}}/api/v1/users
+Content-Type: application/json
+
+{
+  "minAge": 30,
+  "maxAge": 50
+}
+
+###
+
+QUERY {{http_query_rfc_HostAddress}}/api/v1/users
+Content-Type: application/json
+
+{
+  "minAge": 30,
+  "maxAge": 50
+}
